@@ -1,0 +1,31 @@
+# deps
+node_modules/
+vendor/
+/composer.json
+/composer.lock
+
+# env
+.env
+.env.*
+!.env.example
+frontend/.env
+backend/.env
+
+# builds
+frontend/dist/
+backend/public/build/
+
+# caches
+.claude/
+.superpowers/
+backend/storage/framework/cache/
+backend/storage/framework/sessions/
+backend/storage/framework/views/
+backend/storage/logs/*.log
+backend/bootstrap/cache/*.php
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,23 @@
+<svg width="720" height="900" viewBox="0 0 720 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="back" x1="172" y1="58" x2="548" y2="842" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f4f0df"/>
+      <stop offset="0.55" stop-color="#d8d3bf"/>
+      <stop offset="1" stop-color="#777b84"/>
+    </linearGradient>
+    <filter id="shadow" x="98" y="26" width="524" height="850" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="32" stdDeviation="32" flood-color="#31385C" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <rect x="172" y="58" width="376" height="784" rx="68" fill="url(#back)"/>
+    <rect x="188" y="74" width="344" height="752" rx="55" fill="#ece8d8" opacity="0.38"/>
+    <rect x="210" y="100" width="148" height="148" rx="42" fill="#f7f4ea" opacity="0.78"/>
+    <circle cx="255" cy="145" r="27" fill="#20242c"/>
+    <circle cx="315" cy="203" r="27" fill="#20242c"/>
+    <circle cx="316" cy="145" r="10" fill="#e5d9a6"/>
+    <circle cx="255" cy="203" r="10" fill="#d8c886"/>
+    <circle cx="360" cy="454" r="52" stroke="#ffffff" stroke-opacity="0.36" stroke-width="4"/>
+    <path d="M172 610C254 536 334 558 398 496C454 442 484 364 548 318V774C548 812 518 842 480 842H240C202 842 172 812 172 774V610Z" fill="#396687" opacity="0.08"/>
+  </g>
+</svg>

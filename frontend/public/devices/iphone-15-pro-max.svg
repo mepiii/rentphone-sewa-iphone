@@ -1,0 +1,32 @@
+<svg width="720" height="900" viewBox="0 0 720 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="body" x1="164" y1="44" x2="556" y2="856" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4b5262"/>
+      <stop offset="0.5" stop-color="#242a35"/>
+      <stop offset="1" stop-color="#798190"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="190" y1="73" x2="530" y2="827" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f7f9fb"/>
+      <stop offset="0.55" stop-color="#dfe7f0"/>
+      <stop offset="1" stop-color="#c9d6e4"/>
+    </linearGradient>
+    <linearGradient id="island" x1="291" y1="90" x2="429" y2="126" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="1" stop-color="#020617"/>
+    </linearGradient>
+    <filter id="shadow" x="90" y="10" width="540" height="880" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="36" stdDeviation="36" flood-color="#31385C" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <rect x="160" y="42" width="400" height="816" rx="74" fill="url(#body)"/>
+    <rect x="178" y="60" width="364" height="780" rx="60" fill="#0d1118"/>
+    <rect x="192" y="74" width="336" height="752" rx="48" fill="url(#screen)"/>
+    <path d="M192 603C270 528 330 546 378 480C428 412 456 286 528 248V778C528 805 507 826 480 826H240C213 826 192 805 192 778V603Z" fill="#396687" opacity="0.18"/>
+    <path d="M192 302C276 236 334 270 396 190C434 141 472 103 528 91V392C472 432 430 447 372 434C304 418 252 380 192 416V302Z" fill="#DB3022" opacity="0.08"/>
+    <rect x="292" y="90" width="136" height="38" rx="19" fill="url(#island)"/>
+    <circle cx="409" cy="109" r="5" fill="#243144"/>
+    <rect x="156" y="196" width="8" height="72" rx="4" fill="#4b5262"/>
+    <rect x="556" y="250" width="8" height="108" rx="4" fill="#4b5262"/>
+  </g>
+</svg>
