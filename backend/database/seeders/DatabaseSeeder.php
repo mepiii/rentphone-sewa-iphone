@@ -67,9 +67,14 @@ class DatabaseSeeder extends Seeder
         RentalOrderItem::updateOrCreate(['rental_order_id' => $order->id, 'product_id' => $products[1]->id], ['product_name' => $products[1]->name, 'color' => 'Black', 'quantity' => 1, 'price_per_day' => 220000, 'subtotal' => 440000]);
         ReturnReport::updateOrCreate(['rental_order_id' => $order->id], ['user_id' => $user->id, 'reason' => 'Sewa selesai', 'condition_notes' => 'Baik', 'status' => 'submitted']);
 
-        if ($other->rentalOrders()->count() === 0) {
-            RentalOrder::factory()->count(2)->create(['user_id' => $other->id, 'status' => 'processing']);
-            RentalOrder::factory()->count(2)->create(['user_id' => $other->id, 'status' => 'completed', 'payment_status' => 'paid']);
-        }
+        collect([
+            ['ORD-DEMO-002', 'processing', 'unpaid', $products[0]],
+            ['ORD-DEMO-003', 'processing', 'pending', $products[2]],
+            ['ORD-DEMO-004', 'completed', 'paid', $products[3]],
+            ['ORD-DEMO-005', 'completed', 'paid', $products[0]],
+        ])->each(function ($row) use ($other, $pickup, $dana) {
+            $order = RentalOrder::updateOrCreate(['order_number' => $row[0]], ['user_id' => $other->id, 'delivery_method_id' => $pickup->id, 'payment_method_id' => $dana->id, 'rental_duration_type' => 'day', 'rental_duration_value' => 1, 'product_price' => $row[3]->price_per_day, 'delivery_price' => 0, 'total_price' => $row[3]->price_per_day, 'status' => $row[1], 'payment_status' => $row[2]]);
+            RentalOrderItem::updateOrCreate(['rental_order_id' => $order->id, 'product_id' => $row[3]->id], ['product_name' => $row[3]->name, 'quantity' => 1, 'price_per_day' => $row[3]->price_per_day, 'subtotal' => $row[3]->price_per_day]);
+        });
     }
 }
