@@ -1,0 +1,17 @@
+# Purpose: Railway fallback build and start config for Laravel API.
+# Callers: Railway/Nixpacks deployment when Dockerfile is not selected.
+# Deps: Composer, PHP 8.4, Laravel artisan, Railway PORT env.
+# API: Nixpacks phases and start command.
+# Side effects: runs migrations before starting HTTP server.
+
+[phases.setup]
+nixPkgs = ["php84", "php84Packages.composer"]
+
+[phases.install]
+cmds = ["composer install --no-dev --optimize-autoloader"]
+
+[phases.build]
+cmds = ["php artisan config:cache", "php artisan route:cache"]
+
+[start]
+cmd = "php artisan migrate --force && php artisan db:seed --force && php artisan serve --host=0.0.0.0 --port=${PORT}"
